@@ -1,0 +1,21 @@
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class DataUpdater {
+
+    private static int data = 0;
+
+    public static void main(String[] args) {
+        Timer timer = new Timer();
+
+        TimerTask updateTask = new TimerTask() {
+            @Override
+            public void run() {
+                data++;
+                System.out.println("Updated Data: " + data);
+            }
+        };
+
+        timer.scheduleAtFixedRate(updateTask, 0, 1000);
+    }
+}
